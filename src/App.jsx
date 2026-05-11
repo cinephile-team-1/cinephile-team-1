@@ -1,7 +1,7 @@
 import "./App.scss";
-// 1. Importamos tu Landing Page (Home)
+
 import Home from "./pages/Home";
-// 2. Importamos los componentes que están haciendo las demás chicas
+
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
