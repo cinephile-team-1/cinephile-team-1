@@ -117,3 +117,101 @@
     }
   }
 }
+.card.large {
+  background-image: url("../assets/hero.png"); //
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--cyan);
+}
+.pricing-section {
+  padding: 80px 10%;
+  text-align: center;
+
+  .pricing-title {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    span {
+      color: var(--cyan);
+    }
+  }
+
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      width: 300px;
+      transition: 0.3s;
+
+      .plan-label {
+        font-size: 0.7rem;
+        opacity: 0.6;
+        letter-spacing: 2px;
+      }
+      h3 {
+        font-size: 1.8rem;
+        margin: 15px 0;
+      }
+      .price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--cyan);
+        span {
+          font-size: 1rem;
+          opacity: 0.5;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 30px 0;
+        li {
+          margin-bottom: 15px;
+          font-size: 0.9rem;
+          opacity: 0.8;
+        }
+      }
+
+      .btn-plan {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+      }
+
+      // Estilos para el plan Superior (Cyan)
+      &.featured {
+        border-color: var(--cyan);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+        .btn-plan.primary {
+          background: var(--cyan);
+          color: var(--azul);
+          border: none;
+        }
+      }
+
+      // Estilos para el plan Premium (Rosa)
+      &.premium {
+        border-color: var(--rosa);
+        .price {
+          color: var(--rosa);
+        }
+        .btn-plan.secondary {
+          background: var(--rosa);
+          color: white;
+          border: none;
+        }
+      }
+    }
+  }
+}

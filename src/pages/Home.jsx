@@ -33,7 +33,6 @@ function Home() {
           </div>
         </div>
 
-        {/* Справа будут карточки (их можно сделать отдельными div) */}
         <div className="hero-cards">
           <div className="card large sci-fi">
             <span>SCI-FI</span>
@@ -44,6 +43,62 @@ function Home() {
           <div className="card small releases">
             <i className="play-icon">▶</i>
             <span>NEW RELEASES</span>
+          </div>
+        </div>
+      </section>
+
+      {/* --- SECCIÓN DE PRECIOS (AÑADIDO) --- */}
+      <section className="pricing-section">
+        <h2 className="pricing-title">
+          CHOOSE YOUR <span>LENS</span>
+        </h2>
+
+        <div className="pricing-container">
+          {/* Plan Basic */}
+          <div className="pricing-card">
+            <span className="plan-label">ESSENTIALS</span>
+            <h3>BASIC</h3>
+            <p className="price">
+              $3.99<span>/mo</span>
+            </p>
+            <ul>
+              <li>1080p HD Streaming</li>
+              <li>1 Concurrent Screen</li>
+              <li>Ad-Supported Library</li>
+            </ul>
+            <button className="btn-plan">Select Basic</button>
+          </div>
+
+          {/* Plan Superior (El destacado en Cyan) */}
+          <div className="pricing-card featured">
+            <span className="plan-label">MOST POPULAR</span>
+            <h3>SUPERIOR</h3>
+            <p className="price">
+              $7.99<span>/mo</span>
+            </p>
+            <ul>
+              <li>4K Ultra HD + HDR</li>
+              <li>2 Concurrent Screens</li>
+              <li>No Commercial Breaks</li>
+              <li>Spatial Audio Support</li>
+            </ul>
+            <button className="btn-plan primary">Select Superior</button>
+          </div>
+
+          {/* Plan Premium (El de Rosa) */}
+          <div className="pricing-card premium">
+            <span className="plan-label">ELITE CHOICE</span>
+            <h3>PREMIUM</h3>
+            <p className="price">
+              $10.99<span>/mo</span>
+            </p>
+            <ul>
+              <li>8K Streaming Ready</li>
+              <li>Unlimited Screens</li>
+              <li>Early Access Premieres</li>
+              <li>Dolby Atmos Mastering</li>
+            </ul>
+            <button className="btn-plan secondary">Select Premium</button>
           </div>
         </div>
       </section>
