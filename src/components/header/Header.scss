@@ -1,0 +1,69 @@
+.header {
+  position: absolute; // Шапка поверх фона Hero
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 20px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between; // Логотип слева, кнопки справа
+    align-items: center;
+    padding: 0 10%;
+  }
+
+  &__logo {
+    color: var(--cyan);
+    font-weight: 800;
+    font-size: 1.5rem;
+    font-family: var(--headers-font);
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+
+  &__auth {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &--login {
+      background: transparent;
+      border: none;
+      color: var(--blanco);
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &--access {
+      background: var(--cyan);
+      border: none;
+      color: var(--azul);
+      &:hover {
+        box-shadow: 0 0 15px rgba(0, 244, 254, 0.4);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    &__container {
+      padding: 0 5%;
+    }
+  }
+}

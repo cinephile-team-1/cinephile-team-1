@@ -1,22 +1,19 @@
 import "./App.scss";
-
-import Home from "./pages/Home";
-
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Home from "./pages/Home.jsx";
+import Header from "./components/header/Header.jsx";
+import Navbar from "./components/header/Navbar.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
 function App() {
   return (
     <div className="app-container">
-      {/* El Header incluye el Navbar */}
       <Header />
+      <Navbar />
 
-      {/* HOME */}
       <main>
         <Home />
       </main>
 
-      {/* El Footer  */}
       <Footer />
     </div>
   );
