@@ -1,0 +1,11 @@
+@use './styles/variables' as *;
+@use './styles/Header.scss';
+@use './styles/Navbar.scss';
+@use './styles/Login.scss';
+@use './styles/Footer.scss';
+
+
+body {
+    background-color: $azul-bg;
+
+}

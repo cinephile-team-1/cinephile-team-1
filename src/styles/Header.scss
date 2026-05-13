@@ -1,0 +1,33 @@
+@use './variables' as *;
+
+.ct-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: $azul-bg;
+    color: $cyan;
+    font-family: $font-main;
+    p {
+        font-weight: 700;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .ct-header {
+        position: fixed;
+        bottom: 0;
+        top: unset;
+        width: 100%;
+        overflow: hidden;
+        padding: 0.5rem 0;
+        
+        p {
+            display: none;
+        }
+    }
+}
