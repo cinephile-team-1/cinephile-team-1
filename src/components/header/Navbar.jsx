@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { NavLink } from 'react-router'
 
 function Navbar() {
   return (
     <nav className='ct-navbar'>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/pricing"}>Pricing</Link>
-        <Link to={"/contact"}>Contact</Link>
+        <NavLink to={"/"}>Movies</NavLink>
+        <NavLink to={"/pricing"}>Pricing</NavLink>
+        <NavLink to={"/contact"}>Contact</NavLink>
     </nav>
   )
 }

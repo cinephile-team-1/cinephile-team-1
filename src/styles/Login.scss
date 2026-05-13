@@ -1,0 +1,7 @@
+@use './variables' as *;
+
+@media (max-width: 768px) {
+    .ct-login {
+        display: none;
+    }
+}
