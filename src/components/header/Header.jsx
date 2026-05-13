@@ -9,7 +9,7 @@ function Header() {
         <Navbar/>
         <Login/>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

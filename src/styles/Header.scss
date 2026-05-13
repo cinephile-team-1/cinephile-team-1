@@ -1,6 +1,7 @@
 @use './variables' as *;
 
 .ct-header {
+    max-width: 100%;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -8,9 +9,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: $azul-bg;
+    background-color: $azul;
     color: $cyan;
-    font-family: $font-main;
+    font-family: $font-title;
     p {
         font-weight: 700;
     }

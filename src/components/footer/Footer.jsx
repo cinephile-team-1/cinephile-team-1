@@ -18,7 +18,7 @@ function Footer() {
           <li><img src={shareIcon} alt="share icon" /></li>
         </ul>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

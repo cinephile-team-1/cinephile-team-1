@@ -8,7 +8,7 @@ function Navbar() {
         <NavLink to={"/pricing"}>Pricing</NavLink>
         <NavLink to={"/contact"}>Contact</NavLink>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
