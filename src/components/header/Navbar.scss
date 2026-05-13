@@ -1,16 +1,16 @@
 .navbar {
   display: flex;
   justify-content: center;
-  padding: 15px 0;
-  width: 100%;
-  position: absolute;
-  top: 85px;
+  align-items: center;
+
   z-index: 99;
 
   &__list {
     display: flex;
     list-style: none;
     gap: 40px;
+    margin: 0;
+    padding: 0;
   }
 
   &__item {

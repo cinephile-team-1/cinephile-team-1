@@ -6,8 +6,8 @@ function Footer() {
     <footer className="footer">
       <div className="footer__content">
         <div className="footer__brand">
-          <span className="footer__logo">CINEPHILE.</span>
-          <p className="footer__tagline">PRECISION ENGINEERED STREAMING.</p>
+          <div className="footer__logo">CINEPHILE.</div>
+          <div className="footer__tagline">PRECISION ENGINEERED STREAMING.</div>
         </div>
 
         <div className="footer__links">

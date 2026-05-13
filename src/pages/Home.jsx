@@ -1,111 +1,109 @@
+import { useState, useEffect } from "react";
 import "./Home.scss";
 
+import sciFiImg from "../assets/SCI-Fi.png";
+import dramaImg from "../assets/drama.png";
+import newReleasesImg from "../assets/new-releases.png";
+
+const contentData = {
+  desktop: {
+    badge: "PREMIUM STREAMING",
+    title: (
+      <>
+        UNLIMITED CINEMA AT <br />{" "}
+        <span className="hero__title--highlight">YOUR FINGERTIPS</span>
+      </>
+    ),
+    description:
+      "Experience breathtaking visual storytelling with precision-engineered 8K streaming. Access the world's most curated library of modern masterpieces and cult classics.",
+    btnPrimary: "GET STARTED",
+    btnSecondary: "BROWSE FILMS",
+  },
+  mobile: {
+    badge: "ULTRA HD STREAMING",
+    title: (
+      <>
+        Discover <span className="hero__title--highlight">Pure</span> <br />{" "}
+        Cinema.
+      </>
+    ),
+    description:
+      "Precision-engineered streaming for the world's most dedicated cinephiles.",
+    btnPrimary: "Get Access",
+    btnSecondary: "View Catalog",
+  },
+};
+
 function Home() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const currentContent = isMobile ? contentData.mobile : contentData.desktop;
+
   return (
     <main className="home">
-      {/* HERO SECTION */}
       <section className="hero">
         <div className="hero__content">
-          <span className="hero__badge">PREMIUM STREAMING</span>
-          <h1 className="hero__title">
-            UNLIMITED CINEMA AT <br />
-            <span className="hero__title--highlight">YOUR FINGERTIPS</span>
-          </h1>
-          <p className="hero__description">
-            Experience breathtaking visual storytelling with
-            precision-engineered 8K streaming.
-          </p>
+          <span className="hero__badge">{currentContent.badge}</span>
+          <h1 className="hero__title">{currentContent.title}</h1>
+          <p className="hero__description">{currentContent.description}</p>
 
           <div className="hero__actions">
             <button className="hero__btn hero__btn--primary">
-              GET STARTED
+              {currentContent.btnPrimary}
             </button>
             <button className="hero__btn hero__btn--secondary">
-              BROWSE FILMS
+              {currentContent.btnSecondary}
             </button>
           </div>
 
-          <div className="hero__stats">
-            <div className="hero__stat-item">
-              <strong>500k+</strong> <p>SUBSCRIBERS</p>
+          {!isMobile && (
+            <div className="hero__stats">
+              <div className="hero__stat-item">
+                <strong>500k+</strong> <p>SUBSCRIBERS</p>
+              </div>
+              <div className="hero__stat-item">
+                <strong>12k+</strong> <p>TITLES</p>
+              </div>
+              <div className="hero__stat-item">
+                <strong>8K</strong> <p>RESOLUTION</p>
+              </div>
             </div>
-            <div className="hero__stat-item">
-              <strong>12k+</strong> <p>TITLES</p>
-            </div>
-            <div className="hero__stat-item">
-              <strong>8K</strong> <p>RESOLUTION</p>
-            </div>
-          </div>
+          )}
         </div>
 
-        <div className="hero__grid">
-          <div className="hero__card hero__card--tall"></div>
-          <div className="hero__card hero__card--small"></div>
-          <div className="hero__card hero__card--accent"></div>
-        </div>
+        {/* Передаем фоновые изображения напрямую через inline-style */}
+        {!isMobile && (
+          <div className="hero__grid">
+            <div className="hero__card hero__card--tall"></div>
+            <div className="hero__card hero__card--small"></div>
+            <div className="hero__card hero__card--accent"></div>
+          </div>
+        )}
       </section>
 
-      {/* CATALOG SECTION */}
-      <section className="catalog">
-        <h2 className="catalog__title">
-          Explore <span>Our Catalog</span>
-        </h2>
-        <div className="catalog__grid">
-          <div className="catalog__item">
-            <div className="catalog__poster"></div>
-            <h3 className="catalog__name">Interstellar</h3>
-          </div>
-          <div className="catalog__item">
-            <div className="catalog__poster"></div>
-            <h3 className="catalog__name">Inception</h3>
-          </div>
-          <div className="catalog__item">
-            <div className="catalog__poster"></div>
-            <h3 className="catalog__name">The Batman</h3>
-          </div>
-          <div className="catalog__item">
-            <div className="catalog__poster"></div>
-            <h3 className="catalog__name">Parasite</h3>
-          </div>
-        </div>
-      </section>
+      {isMobile && (
+        <>
+          <section className="trending">
+            <div className="trending__card"></div>
+          </section>
 
-      {/* PRICING SECTION */}
-      <section className="pricing">
-        <h2 className="pricing__title">
-          CHOOSE YOUR <span className="pricing__title--highlight">LENS</span>
-        </h2>
-
-        <div className="pricing__container">
-          <div className="pricing__card">
-            <span className="pricing__label">ESSENTIALS</span>
-            <h3 className="pricing__plan-name">BASIC</h3>
-            <p className="pricing__price">
-              $3.99<span>/mo</span>
-            </p>
-            <ul className="pricing__features">
-              <li>1080p HD Streaming</li>
-              <li>1 Concurrent Screen</li>
-            </ul>
-            <button className="pricing__btn">Select Basic</button>
-          </div>
-
-          <div className="pricing__card pricing__card--featured">
-            <span className="pricing__label">MOST POPULAR</span>
-            <h3 className="pricing__plan-name">SUPERIOR</h3>
-            <p className="pricing__price">
-              $7.99<span>/mo</span>
-            </p>
-            <ul className="pricing__features">
-              <li>4K Ultra HD + HDR</li>
-              <li>2 Concurrent Screens</li>
-            </ul>
-            <button className="pricing__btn pricing__btn--featured">
-              Select Superior
-            </button>
-          </div>
-        </div>
-      </section>
+          <section className="keep-watching">
+            <div className="keep-watching__header">
+              <h2 className="keep-watching__title">Keep Watching</h2>
+              <a href="#see-all" className="keep-watching__link">
+                See All
+              </a>
+            </div>
+            <div className="watch-card"></div>
+          </section>
+        </>
+      )}
     </main>
   );
 }
