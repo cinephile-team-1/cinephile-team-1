@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
 import "./Home.scss";
 
@@ -109,3 +110,14 @@ function Home() {
 }
 
 export default Home;
+=======
+function Home() {
+  return (
+    <div style={{ color: 'white' }}>
+      <h1>HOME PAGE</h1>
+    </div>
+  );
+}
+
+export default Home;
+>>>>>>> feature-contact
