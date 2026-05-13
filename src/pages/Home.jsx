@@ -1,7 +1,11 @@
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
 import "./Home.scss";
 
 function Home() {
   return (
+  <>
+    <Header/>
     <div className="home-container">
       {/* HERO SECTION */}
       <section className="hero">
@@ -103,6 +107,8 @@ function Home() {
         </div>
       </section>
     </div>
+    <Footer/>
+  </>
   );
 }
 

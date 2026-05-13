@@ -1,0 +1,56 @@
+@use './variables' as *;
+
+
+.ct-footer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #1b1742;
+    background-color: $azul-bg;
+    color: $gris;
+    font-family: $font-alt;
+    font-size: 0.9rem;
+    padding: 1rem;
+    span {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        color: $gris;
+        margin-left: 1rem;
+    }
+}
+
+.ct-footer_logo {
+    color: $cyan;
+    font-family: $font-main;
+}
+
+.ct-footer_info, .ct-footer_icons {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .ct-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 0.7rem;
+        
+        span {
+            display: none;
+        }
+    }
+
+    .ct-footer_info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ct-footer_icons {
+        display: none;
+    }
+}
