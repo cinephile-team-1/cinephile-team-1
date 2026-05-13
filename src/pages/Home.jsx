@@ -1,114 +1,110 @@
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
+import { useState, useEffect } from "react";
 import "./Home.scss";
 
+import sciFiImg from "../assets/SCI-Fi.png";
+import dramaImg from "../assets/drama.png";
+import newReleasesImg from "../assets/new-releases.png";
+
+const contentData = {
+  desktop: {
+    badge: "PREMIUM STREAMING",
+    title: (
+      <>
+        UNLIMITED CINEMA AT <br />{" "}
+        <span className="hero__title--highlight">YOUR FINGERTIPS</span>
+      </>
+    ),
+    description:
+      "Experience breathtaking visual storytelling with precision-engineered 8K streaming. Access the world's most curated library of modern masterpieces and cult classics.",
+    btnPrimary: "GET STARTED",
+    btnSecondary: "BROWSE FILMS",
+  },
+  mobile: {
+    badge: "ULTRA HD STREAMING",
+    title: (
+      <>
+        Discover <span className="hero__title--highlight">Pure</span> <br />{" "}
+        Cinema.
+      </>
+    ),
+    description:
+      "Precision-engineered streaming for the world's most dedicated cinephiles.",
+    btnPrimary: "Get Access",
+    btnSecondary: "View Catalog",
+  },
+};
+
 function Home() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const currentContent = isMobile ? contentData.mobile : contentData.desktop;
+
   return (
-  <>
-    <Header/>
-    <div className="home-container">
-      {/* HERO SECTION */}
+    <main className="home">
       <section className="hero">
-        <div className="hero-content">
-          <span className="badge">PREMIUM STREAMING</span>
-          <h1>
-            UNLIMITED CINEMA AT <br /> <span>YOUR FINGERTIPS</span>
-          </h1>
-          <p>
-            Experience breathtaking visual storytelling with
-            precision-engineered 8K streaming.
-          </p>
+        <div className="hero__content">
+          <span className="hero__badge">{currentContent.badge}</span>
+          <h1 className="hero__title">{currentContent.title}</h1>
+          <p className="hero__description">{currentContent.description}</p>
 
-          <div className="hero-buttons">
-            <button className="btn-primary">GET STARTED</button>
-            <button className="btn-secondary">BROWSE FILMS</button>
+          <div className="hero__actions">
+            <button className="hero__btn hero__btn--primary">
+              {currentContent.btnPrimary}
+            </button>
+            <button className="hero__btn hero__btn--secondary">
+              {currentContent.btnSecondary}
+            </button>
           </div>
 
-          <div className="hero-stats">
-            <div>
-              <strong>500k+</strong> <p>SUBSCRIBERS</p>
+          {!isMobile && (
+            <div className="hero__stats">
+              <div className="hero__stat-item">
+                <strong>500k+</strong> <p>SUBSCRIBERS</p>
+              </div>
+              <div className="hero__stat-item">
+                <strong>12k+</strong> <p>TITLES</p>
+              </div>
+              <div className="hero__stat-item">
+                <strong>8K</strong> <p>RESOLUTION</p>
+              </div>
             </div>
-            <div>
-              <strong>12k+</strong> <p>TITLES</p>
-            </div>
-            <div>
-              <strong>8K</strong> <p>RESOLUTION</p>
-            </div>
-          </div>
+          )}
         </div>
 
-        <div className="hero-cards">
-          <div className="card large sci-fi">
-            <span>SCI-FI</span>
+        {/* Передаем фоновые изображения напрямую через inline-style */}
+        {!isMobile && (
+          <div className="hero__grid">
+            <div className="hero__card hero__card--tall"></div>
+            <div className="hero__card hero__card--small"></div>
+            <div className="hero__card hero__card--accent"></div>
           </div>
-          <div className="card small drama">
-            <span>DRAMA</span>
-          </div>
-          <div className="card small releases">
-            <i className="play-icon">▶</i>
-            <span>NEW RELEASES</span>
-          </div>
-        </div>
+        )}
       </section>
 
-      {/* --- SECCIÓN DE PRECIOS (AÑADIDO) --- */}
-      <section className="pricing-section">
-        <h2 className="pricing-title">
-          CHOOSE YOUR <span>LENS</span>
-        </h2>
+      {isMobile && (
+        <>
+          <section className="trending">
+            <div className="trending__card"></div>
+          </section>
 
-        <div className="pricing-container">
-          {/* Plan Basic */}
-          <div className="pricing-card">
-            <span className="plan-label">ESSENTIALS</span>
-            <h3>BASIC</h3>
-            <p className="price">
-              $3.99<span>/mo</span>
-            </p>
-            <ul>
-              <li>1080p HD Streaming</li>
-              <li>1 Concurrent Screen</li>
-              <li>Ad-Supported Library</li>
-            </ul>
-            <button className="btn-plan">Select Basic</button>
-          </div>
-
-          {/* Plan Superior (El destacado en Cyan) */}
-          <div className="pricing-card featured">
-            <span className="plan-label">MOST POPULAR</span>
-            <h3>SUPERIOR</h3>
-            <p className="price">
-              $7.99<span>/mo</span>
-            </p>
-            <ul>
-              <li>4K Ultra HD + HDR</li>
-              <li>2 Concurrent Screens</li>
-              <li>No Commercial Breaks</li>
-              <li>Spatial Audio Support</li>
-            </ul>
-            <button className="btn-plan primary">Select Superior</button>
-          </div>
-
-          {/* Plan Premium (El de Rosa) */}
-          <div className="pricing-card premium">
-            <span className="plan-label">ELITE CHOICE</span>
-            <h3>PREMIUM</h3>
-            <p className="price">
-              $10.99<span>/mo</span>
-            </p>
-            <ul>
-              <li>8K Streaming Ready</li>
-              <li>Unlimited Screens</li>
-              <li>Early Access Premieres</li>
-              <li>Dolby Atmos Mastering</li>
-            </ul>
-            <button className="btn-plan secondary">Select Premium</button>
-          </div>
-        </div>
-      </section>
-    </div>
-    <Footer/>
-  </>
+          <section className="keep-watching">
+            <div className="keep-watching__header">
+              <h2 className="keep-watching__title">Keep Watching</h2>
+              <a href="#see-all" className="keep-watching__link">
+                See All
+              </a>
+            </div>
+            <div className="watch-card"></div>
+          </section>
+        </>
+      )}
+    </main>
   );
 }
 

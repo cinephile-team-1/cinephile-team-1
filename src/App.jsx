@@ -1,24 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
-// 1. Importamos tu Landing Page (Home)
-import Home from "./pages/Home";
-// 2. Importamos los componentes que están haciendo las demás chicas
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Home from "./pages/Home.jsx";
+import Header from "./components/header/Header.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
 function App() {
   return (
-    <div className="app-container">
-      {/* El Header incluye el Navbar */}
-      <Header />
-
-      {/* HOME */}
-      <main>
-        <Home />
-      </main>
-
-      {/* El Footer  */}
-      <Footer />
-    </div>
+    <Router>
+      <div className="app-container">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Home />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

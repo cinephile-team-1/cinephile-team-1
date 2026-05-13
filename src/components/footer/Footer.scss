@@ -1,0 +1,180 @@
+.footer {
+  background-color: var(--azul);
+  padding: 10px 0px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--blanco);
+  width: 100%;
+
+  &__brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 10px 0px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__logo {
+    color: var(--cyan);
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-right: auto;
+  }
+
+  &__tagline {
+    font-size: 0.7rem;
+    opacity: 0.5;
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
+
+  &__links {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__link {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 1;
+      color: var(--cyan);
+    }
+  }
+
+  &__copyright {
+    display: none;
+  }
+}
+
+.footer-nav {
+  display: none;
+}
+
+// ==========================================
+// 📱 ТОЧЕЧНАЯ КОРРЕКЦИЯ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ
+// ==========================================
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 24px 140px !important; // Создаем свободное пространство до краев дисплея
+
+    &__content {
+      flex-direction: column;
+      gap: 32px;
+      text-align: center;
+      padding: 0;
+      width: 100%;
+    }
+
+    &__brand {
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      gap: 0;
+    }
+
+    &__logo {
+      margin: 0 auto;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    &__tagline {
+      display: none; // Полностью убираем слоган на мобилке по оригиналу
+    }
+
+    &__links {
+      display: grid;
+      grid-template-columns: repeat(
+        2,
+        max-content
+      ); // Ссылки стоят парами без растягивания
+      justify-content: center; // Центрируем всю сетку по центру экрана
+      gap: 20px 40px; // Аккуратные зазоры между строками и колонками
+      width: 100%;
+    }
+
+    &__link {
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase; // Гарантируем верхний регистр букв
+      opacity: 0.5;
+      text-align: center;
+    }
+
+    &__copyright {
+      display: block;
+      font-size: 9px;
+      opacity: 0.25;
+      letter-spacing: 1px;
+      margin-top: 12px;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+  }
+
+  // Фиксированная нижняя навигационная панель
+  .footer-nav {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0b0914; // Глубокий темный оттенок из макета
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 40px;
+    box-sizing: border-box;
+    z-index: 999;
+
+    &__list {
+      display: flex;
+      justify-content: space-between; // Равномерно разносим пункты Movies, Pricing, Contact
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    &__item {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--blanco);
+      opacity: 0.4;
+      cursor: pointer;
+      position: relative;
+      padding-bottom: 8px;
+
+      &--active {
+        opacity: 1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%; // Линия растягивается строго по ширине слова
+          height: 2px;
+          background-color: var(--cyan);
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
