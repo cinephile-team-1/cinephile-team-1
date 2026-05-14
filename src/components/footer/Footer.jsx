@@ -5,7 +5,7 @@ import shareIcon from '../../assets/icons/share-icon.svg';
 function Footer() {
   return (
     <footer className='ct-footer'>
-        <p className='ct-footer_logo'>CINEPHILE.<span> PRECISION ENGINEERED SRTEAMING</span></p>
+        <p className='ct-footer_logo'>CINEPHILE.<span>PRECISION ENGINEERED SRTEAMING</span></p>
         
         <ul className='ct-footer_info'>
           <li>PRIVACY POLICY</li>
@@ -17,6 +17,7 @@ function Footer() {
           <li><img src={globeIcon} alt="globe icon" /></li>
           <li><img src={shareIcon} alt="share icon" /></li>
         </ul>
+        <p className='ct-footer_copy'>&copy;2024 CINEPHILE. PRECISION ENGINERED STREAMING.</p>
     </footer>
   );
 }
