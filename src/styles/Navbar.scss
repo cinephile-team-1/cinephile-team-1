@@ -1,0 +1,39 @@
+@use './variables' as *;
+
+
+.ct-navbar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    a {
+        text-decoration: none;
+        color: $gris;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $cyan;
+        }
+
+        &.active {
+            color: $cyan;
+            border-bottom: 2px solid $cyan;
+            padding-bottom: 4px;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .ct-navbar {
+        width: 100vh;
+        justify-content: space-around;
+        flex: 1;
+        gap: 0;
+        a {
+            font-size:  0.8rem;
+        }
+    }
+}
