@@ -1,18 +1,11 @@
-<<<<<<< HEAD
 import React from 'react'
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 function Contact() {
   return (
-    <div>Contact</div>
-  )
-}
-
-export default Contact
-=======
-import './contact.scss';
-
-function Contact() {
-  return (
+    <>
+    <Header/>
     <main className="contact">
       <div className="contact__container">
 
@@ -65,8 +58,9 @@ function Contact() {
 
       </div>
     </main>
+    <Footer/>
+    </>
   );
 }
 
 export default Contact;
->>>>>>> feature-contact

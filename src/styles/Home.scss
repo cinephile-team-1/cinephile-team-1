@@ -1,8 +1,8 @@
-@import "../styles/variables";
+@use './variables' as *;
 
 .home {
-  background-color: var(--azul);
-  color: var(--blanco);
+  background-color: $azul;
+  color: $blanco;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,8 +30,8 @@
   }
 
   &__badge {
-    color: var(--rosa);
-    border: 1px solid var(--rosa);
+    color: $rosa;
+    border: 1px solid $rosa;
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 12px;
@@ -41,18 +41,18 @@
   }
 
   &__title {
-    font-family: var(--headers-font);
+    font-family: $font-title;
     font-size: clamp(3rem, 5vw, 4.5rem);
     margin: 24px 0;
     line-height: 1.1;
     font-weight: 700;
     &--highlight {
-      color: var(--cyan);
+      color: $cyan;
     }
   }
 
   &__description {
-    font-family: var(--body-font);
+    font-family: $font-body;
     font-size: 1.1rem;
     opacity: 0.7;
     margin-bottom: 40px;
@@ -72,14 +72,14 @@
     cursor: pointer;
     transition: 0.3s ease;
     &--primary {
-      background-color: var(--cyan);
-      color: var(--azul);
+      background-color: $cyan;
+      color: $azul;
       border: none;
     }
     &--secondary {
       background: transparent;
-      border: 1px solid var(--gris);
-      color: var(--blanco);
+      border: 1px solid $gris;
+      color: $blanco;
     }
   }
 
@@ -125,7 +125,7 @@
     &--tall {
       grid-area: tall;
       background-image: url("../assets/SCI-Fi.png");
-      border-color: var(--cyan);
+      border-color: $cyan;
       background-position: bottom center;
     }
     &--small {
@@ -135,7 +135,7 @@
     &--accent {
       grid-area: small2;
       background-image: url("../assets/new-releases.png");
-      border-color: var(--cyan);
+      border-color: $cyan;
     }
   }
 
@@ -168,16 +168,16 @@
     .hero__play-icon {
       font-size: 28px;
       margin-bottom: 4px;
-      color: var(--cyan);
+      color: $cyan;
     }
     h3 {
       font-size: 14px;
       letter-spacing: 1px;
-      color: var(--cyan);
+      color: $cyan;
     }
     p {
       font-size: 10px;
-      color: var(--blanco);
+      color: $blanco;
       opacity: 0.7;
       margin-top: 2px;
     }
@@ -252,7 +252,7 @@
       font-size: 1.25rem;
     }
     &__link {
-      color: var(--cyan);
+      color: $cyan;
       text-decoration: none;
       font-size: 0.9rem;
     }

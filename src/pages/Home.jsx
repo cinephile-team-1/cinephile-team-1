@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
 import { useState, useEffect } from "react";
-import "./Home.scss";
 
 import sciFiImg from "../assets/SCI-Fi.png";
 import dramaImg from "../assets/drama.png";
@@ -47,6 +47,8 @@ function Home() {
   const currentContent = isMobile ? contentData.mobile : contentData.desktop;
 
   return (
+    <>
+    <Header/>
     <main className="home">
       <section className="hero">
         <div className="hero__content">
@@ -106,18 +108,23 @@ function Home() {
         </>
       )}
     </main>
+    <Footer/>
+    </>
   );
 }
 
 export default Home;
-=======
+
+/*
 function Home() {
   return (
     <div style={{ color: 'white' }}>
       <h1>HOME PAGE</h1>
     </div>
+    <Footer/>
+  </>
   );
 }
 
 export default Home;
->>>>>>> feature-contact
+*/

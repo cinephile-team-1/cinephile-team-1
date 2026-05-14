@@ -1,30 +1,22 @@
-import React from "react";
-import "./Footer.scss";
+import React from 'react'
+import globeIcon from '../../assets/icons/globe-icon.svg';
+import shareIcon from '../../assets/icons/share-icon.svg';
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer__content">
-        <div className="footer__brand">
-          <div className="footer__logo">CINEPHILE.</div>
-          <div className="footer__tagline">PRECISION ENGINEERED STREAMING.</div>
-        </div>
-
-        <div className="footer__links">
-          <a href="#" className="footer__link">
-            PRIVACY POLICY
-          </a>
-          <a href="#" className="footer__link">
-            TERMS OF SERVICE
-          </a>
-          <a href="#" className="footer__link">
-            HELP CENTER
-          </a>
-          <a href="#" className="footer__link">
-            API
-          </a>
-        </div>
-      </div>
+    <footer className='ct-footer'>
+        <p className='ct-footer_logo'>CINEPHILE.<span> PRECISION ENGINEERED SRTEAMING</span></p>
+        
+        <ul className='ct-footer_info'>
+          <li>PRIVACY POLICY</li>
+          <li>TERMS OF SERVICE</li>
+          <li>HELP CENTER</li>
+          <li>API</li>
+        </ul>
+        <ul className='ct-footer_icons'>
+          <li><img src={globeIcon} alt="globe icon" /></li>
+          <li><img src={shareIcon} alt="share icon" /></li>
+        </ul>
     </footer>
   );
 }

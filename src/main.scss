@@ -3,9 +3,16 @@
 @use './styles/Navbar.scss';
 @use './styles/Login.scss';
 @use './styles/Footer.scss';
+@use './styles/Home.scss';
+@use './styles/Contact.scss';
 
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background-color: $azul-bg;
+    width: 100%;
+    font-family: $font-body;
+    background-color: $azul;
 
 }

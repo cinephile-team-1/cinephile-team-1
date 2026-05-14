@@ -2,14 +2,14 @@
 
 
 .ct-footer {
-    width: 100vw;
+    max-width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     border-top: 1px solid #1b1742;
-    background-color: $azul-bg;
+    background-color: $azul;
     color: $gris;
-    font-family: $font-alt;
+    font-family: $font-body;
     font-size: 0.9rem;
     padding: 1rem;
     span {
@@ -22,7 +22,7 @@
 
 .ct-footer_logo {
     color: $cyan;
-    font-family: $font-main;
+    font-family: $font-title;
 }
 
 .ct-footer_info, .ct-footer_icons {
