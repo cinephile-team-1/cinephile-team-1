@@ -1,0 +1,270 @@
+@use './variables' as *;
+
+.pricing {
+  background-color: $bg-dark;
+  color: $blanco;
+  padding: 5rem 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    @media (max-width: 768px) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__tagline {
+    display: inline-block;
+    background-color: rgba(255, 0, 122, 0.1);
+    color: #ff007a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    color: $blanco;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      text-transform: none;
+      visibility: hidden;
+      position: relative;
+      display: block;
+
+      &::after {
+        content: "Choose Your \00000a Lens";
+        white-space: pre-wrap;
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: $blanco;
+      }
+    }
+  }
+
+  &__subtitle {
+    color: #8c8a9e;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      visibility: hidden;
+      position: relative;
+      display: block;
+
+      &::after {
+        content: "Precision-engineered streaming  for the \00000a ultimate cinematic experience.";
+        white-space: pre-wrap;
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: #8c8a9e;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
+  }
+
+  .pricing-card {
+    background-color: $bg-dark;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0, 240, 255, 0.4);
+      box-shadow: 0 12px 30px rgba(0, 240, 255, 0.08);
+    }
+
+    &--featured {
+      border-color: rgba(0, 240, 255, 0.3);
+    }
+
+    &--premium {
+      border-color: $cyan;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 240, 255, 0.2);
+      }
+    }
+
+    &__ribbon {
+      position: absolute;
+      top: 22px;
+      right: -32px;
+      background-color: #ff007a;
+      color: $blanco;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.25rem 2.5rem;
+      transform: rotate(45deg);
+      letter-spacing: 1px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    &__badge {
+      color: #8c8a9e;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    &--premium &__badge {
+      color: $cyan;
+    }
+
+    &__name {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 0 1.5rem 0;
+      letter-spacing: -0.02em;
+    }
+
+    &__price-container {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 2rem;
+    }
+
+    &__price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: $cyan;
+      letter-spacing: -0.02em;
+    }
+
+    &__period {
+      color: #8c8a9e;
+      font-size: 1rem;
+      margin-left: 0.25rem;
+    }
+
+    &__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 3rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex-grow: 1;
+    }
+
+    &__feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: $blanco;
+    }
+
+    &__feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: $cyan;
+      color: #131125;
+      font-size: 0.75rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    &--premium &__feature-icon {
+      background-color: #ffb7df;
+      color: #131125;
+      font-size: 0.85rem;
+      box-shadow: 0 0 10px rgba(255, 183, 223, 0.3);
+    }
+
+    &__button {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      &--outline {
+        background-color: transparent;
+        border: 1px solid rgba(0, 240, 255, 0.3);
+        color: $cyan;
+
+        &:hover {
+          background-color: rgba(0, 240, 255, 0.05);
+          border-color: $cyan;
+        }
+      }
+
+      &--solid {
+        background-color: $cyan;
+        border: 1px solid $cyan;
+        color: $bg-dark;
+
+        &:hover {
+          background-color: $cyan;
+          filter: brightness(1.1);
+          box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+        }
+      }
+    }
+  }
+}
