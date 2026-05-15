@@ -26,9 +26,13 @@
         width: 100%;
         overflow: hidden;
         padding: 0.5rem 0;
-        
+
         p {
-            display: none;
+            position: fixed;
+            top: 0;
+            padding: 1rem;
+            background-color: $azul;
+            width: 100%;
         }
     }
 }
