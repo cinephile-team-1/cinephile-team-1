@@ -1,0 +1,217 @@
+@import "../styles/variables";
+
+.home-container {
+  background-color: var(--azul);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  color: var(--blanco);
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+
+    .hero-content {
+      max-width: 600px;
+
+      .badge {
+        color: var(--rosa);
+        border: 1px solid var(--rosa);
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-family: var(--headers-font);
+        font-size: 4rem;
+        margin: 20px 0;
+        line-height: 1.1;
+
+        span {
+          color: var(--cyan);
+        }
+      }
+
+      p {
+        font-family: var(--body-font);
+        font-size: 1.1rem;
+        opacity: 0.8;
+        margin-bottom: 30px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 50px;
+
+        button {
+          padding: 15px 35px;
+          border-radius: 8px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .btn-primary {
+          background-color: var(--cyan);
+          border: none;
+          color: var(--azul);
+          &:hover {
+            filter: brightness(1.1);
+          }
+        }
+
+        .btn-secondary {
+          background: transparent;
+          border: 1px solid var(--gris);
+          color: var(--blanco);
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 40px;
+        div {
+          strong {
+            font-size: 1.5rem;
+            display: block;
+          }
+          p {
+            font-size: 0.8rem;
+            margin: 0;
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+
+    .hero-cards {
+      display: flex;
+      gap: 20px;
+      // Aquí puedes añadir estilos para las tarjetas más tarde
+    }
+  }
+}
+
+// Adaptación para móvil (segundo mockup)
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    .hero-buttons {
+      justify-content: center;
+    }
+    .hero-stats {
+      justify-content: center;
+    }
+    .hero-cards {
+      display: none;
+    }
+  }
+}
+.card.large {
+  background-image: url("../assets/hero.png"); //
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--cyan);
+}
+.pricing-section {
+  padding: 80px 10%;
+  text-align: center;
+
+  .pricing-title {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    span {
+      color: var(--cyan);
+    }
+  }
+
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      width: 300px;
+      transition: 0.3s;
+
+      .plan-label {
+        font-size: 0.7rem;
+        opacity: 0.6;
+        letter-spacing: 2px;
+      }
+      h3 {
+        font-size: 1.8rem;
+        margin: 15px 0;
+      }
+      .price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--cyan);
+        span {
+          font-size: 1rem;
+          opacity: 0.5;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 30px 0;
+        li {
+          margin-bottom: 15px;
+          font-size: 0.9rem;
+          opacity: 0.8;
+        }
+      }
+
+      .btn-plan {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+      }
+
+      // Estilos para el plan Superior (Cyan)
+      &.featured {
+        border-color: var(--cyan);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+        .btn-plan.primary {
+          background: var(--cyan);
+          color: var(--azul);
+          border: none;
+        }
+      }
+
+      // Estilos para el plan Premium (Rosa)
+      &.premium {
+        border-color: var(--rosa);
+        .price {
+          color: var(--rosa);
+        }
+        .btn-plan.secondary {
+          background: var(--rosa);
+          color: white;
+          border: none;
+        }
+      }
+    }
+  }
+}

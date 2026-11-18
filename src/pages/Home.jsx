@@ -2,9 +2,6 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import { useState, useEffect } from "react";
 
-import sciFiImg from "../assets/SCI-Fi.png";
-import dramaImg from "../assets/drama.png";
-import newReleasesImg from "../assets/new-releases.png";
 
 const contentData = {
   desktop: {
