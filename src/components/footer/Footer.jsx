@@ -1,4 +1,3 @@
-import React from 'react'
 import globeIcon from '../../assets/icons/globe-icon.svg';
 import shareIcon from '../../assets/icons/share-icon.svg';
 
